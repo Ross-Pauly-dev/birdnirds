@@ -10,6 +10,7 @@ const theme = {
         background: 'white',
         max_height: 15
     }
+    
 }
 
 export default theme
