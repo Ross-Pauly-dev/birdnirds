@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "@aws-amplify/ui-react/styles.css";
+import {
+  withAuthenticator
+} from "@aws-amplify/ui-react";
+import Card from './Components/Card';
+import {useTheme} from 'styled-components'
+import CardContainer from './Components/CardContainer';
 
 function App() {
+  const theme = useTheme()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CardContainer theme={theme}>
+      <Card theme={theme} title={'Test'}>
+        Hello there friend
+      </Card>
+
+      <Card theme={theme} title={'Test2'}>
+        Hello there enemy
+      </Card>
+
+      <Card theme={theme} title={'Test2'}>
+        Hello there enemy
+      </Card>
+    </CardContainer>
   );
 }
 
-export default App;
+export default withAuthenticator(App);

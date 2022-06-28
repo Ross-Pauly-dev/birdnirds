@@ -1,0 +1,13 @@
+type Coordinate {
+  latitude: String
+  longitude: String
+}
+
+type Capture @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  date: AWSDate
+  bird: ID
+  user: ID
+  location: Coordinate
+}
